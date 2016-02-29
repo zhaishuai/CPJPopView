@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CPJPopView/CPJAlertView.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    CPJAlertView *popView = [[CPJAlertView alloc] initWithFrame:CGRectMake(100, 200, 200, 200)];
+    popView.backgroundColor = [UIColor blackColor];
+//    [popView show:self.view];
+    [popView show:self.view withConfirm:^{
+        NSLog(@"hello world");
+        [popView hideFromView:self.view];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

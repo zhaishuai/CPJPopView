@@ -16,6 +16,8 @@
 		D9298F181C83E32C003F3ED9 /* CPJPopViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9298F171C83E32C003F3ED9 /* CPJPopViewTests.m */; };
 		D9298F231C83E32C003F3ED9 /* CPJPopViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9298F221C83E32C003F3ED9 /* CPJPopViewUITests.m */; };
 		D9298F341C84114D003F3ED9 /* CPJPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9298F331C84114D003F3ED9 /* CPJPopView.m */; };
+		D9FDBCCC1C841D5E009EDE5C /* CPJAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FDBCCB1C841D5E009EDE5C /* CPJAlertView.m */; };
+		D9FDBCCF1C8436FF009EDE5C /* CPJDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FDBCCE1C8436FF009EDE5C /* CPJDialogView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		D9298F311C83F3B9003F3ED9 /* CPJPopViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPJPopViewProtocol.h; sourceTree = "<group>"; };
 		D9298F321C84114D003F3ED9 /* CPJPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPJPopView.h; sourceTree = "<group>"; };
 		D9298F331C84114D003F3ED9 /* CPJPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPJPopView.m; sourceTree = "<group>"; };
+		D9FDBCCA1C841D5E009EDE5C /* CPJAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPJAlertView.h; sourceTree = "<group>"; };
+		D9FDBCCB1C841D5E009EDE5C /* CPJAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPJAlertView.m; sourceTree = "<group>"; };
+		D9FDBCCD1C8436FF009EDE5C /* CPJDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPJDialogView.h; sourceTree = "<group>"; };
+		D9FDBCCE1C8436FF009EDE5C /* CPJDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPJDialogView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,10 @@
 				D9298F311C83F3B9003F3ED9 /* CPJPopViewProtocol.h */,
 				D9298F321C84114D003F3ED9 /* CPJPopView.h */,
 				D9298F331C84114D003F3ED9 /* CPJPopView.m */,
+				D9FDBCCA1C841D5E009EDE5C /* CPJAlertView.h */,
+				D9FDBCCB1C841D5E009EDE5C /* CPJAlertView.m */,
+				D9FDBCCD1C8436FF009EDE5C /* CPJDialogView.h */,
+				D9FDBCCE1C8436FF009EDE5C /* CPJDialogView.m */,
 			);
 			path = CPJPopView;
 			sourceTree = "<group>";
@@ -285,8 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FDBCCF1C8436FF009EDE5C /* CPJDialogView.m in Sources */,
 				D9298F051C83E32C003F3ED9 /* ViewController.m in Sources */,
 				D9298F021C83E32C003F3ED9 /* AppDelegate.m in Sources */,
+				D9FDBCCC1C841D5E009EDE5C /* CPJAlertView.m in Sources */,
 				D9298F341C84114D003F3ED9 /* CPJPopView.m in Sources */,
 				D9298EFF1C83E32C003F3ED9 /* main.m in Sources */,
 			);
@@ -514,6 +526,7 @@
 				D9298F291C83E32C003F3ED9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9298F2A1C83E32C003F3ED9 /* Build configuration list for PBXNativeTarget "CPJPopViewTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +535,7 @@
 				D9298F2C1C83E32C003F3ED9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9298F2D1C83E32C003F3ED9 /* Build configuration list for PBXNativeTarget "CPJPopViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +544,7 @@
 				D9298F2F1C83E32C003F3ED9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

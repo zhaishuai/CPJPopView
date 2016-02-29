@@ -16,13 +16,7 @@
  */
 - (void)show:(UIView *)view;
 
-- (void)show:(UIView *)view withComplete:(void (^)())complete;
-
 - (void)hideFromView:(UIView *)view;
-
-- (void)show:(UIView *)view withConfirm:(void (^)())confirm;
-
-- (void)show:(UIView *)view withConfirm:(void (^)())confirm withCancel:(void (^)(UIView *view))cancel;
 
 @end
 

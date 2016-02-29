@@ -8,19 +8,64 @@
 
 #import "CPJPopView.h"
 
-@implementation CPJPopView
+@interface CPJDisapperAnimation : CPJPopViewAnimation
 
-- (void)show:(UIView *)view{
+@end
 
-}
+@implementation CPJDisapperAnimation
 
-- (void)show:(UIView *)view withComplete:(void (^)())complete{
+- (void)performAnimation:(UIView *)view{
+    view.alpha = 1.0;
+    [UIView animateWithDuration:3 animations:^{
+        view.alpha = 0;
+    } completion:^(BOOL finished) {
+        [view removeFromSuperview];
+    }];
     
-    
-}
-
-- (void)hideFromView:(UIView *)view{
-
 }
 
 @end
+
+@implementation CPJPopViewAnimation
+
+- (void)performAnimation:(UIView *)view{
+    view.alpha = 0.1;
+    [UIView animateWithDuration:3 animations:^{
+        view.alpha = 1.0;
+    }];
+}
+
+@end
+
+
+@implementation CPJPopView
+
+- (void)show:(UIView *)view{
+    [view addSubview:self];
+    [self.animation performAnimation:self];
+}
+
+- (void)hideFromView:(UIView *)view{
+    [self.disapperAnimation performAnimation:self];
+}
+
+- (CPJPopViewAnimation *)animation{
+    if(!_appearAnimation){
+        _appearAnimation = [CPJPopViewAnimation new];
+    }
+    return _appearAnimation;
+}
+
+- (CPJPopViewAnimation *)disapperAnimation{
+    if(!_disapperAnimation){
+        _disapperAnimation = [CPJDisapperAnimation new];
+    }
+    return _disapperAnimation;
+}
+
+@end
+
+
+
+
+
