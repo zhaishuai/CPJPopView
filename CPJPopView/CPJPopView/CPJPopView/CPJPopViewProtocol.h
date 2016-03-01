@@ -14,9 +14,9 @@
 /**
  *
  */
-- (void)show:(UIView *)view;
+- (void)showInView:(UIView *)view;
 
-- (void)hideFromView:(UIView *)view;
+- (void)hide;
 
 @end
 

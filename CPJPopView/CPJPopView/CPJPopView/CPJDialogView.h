@@ -10,6 +10,8 @@
 
 @interface CPJDialogView : CPJAlertView
 
-- (void)show:(UIView *) view withConfirm:(void (^)())confirm withCancel:(void (^)(UIView *view))cancel;
+@property (nonatomic) UIButton *cancelButton;
+
+- (void)showInView:(UIView *) view withText:(NSString *)text withConfirm:(void (^)())confirm withCancel:(void (^)())cancel;
 
 @end

@@ -16,7 +16,7 @@
 
 - (void)performAnimation:(UIView *)view{
     view.alpha = 1.0;
-    [UIView animateWithDuration:3 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         view.alpha = 0;
     } completion:^(BOOL finished) {
         [view removeFromSuperview];
@@ -30,22 +30,25 @@
 
 - (void)performAnimation:(UIView *)view{
     view.alpha = 0.1;
-    [UIView animateWithDuration:3 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         view.alpha = 1.0;
     }];
 }
 
 @end
 
+@interface CPJPopView ()
+
+@end
 
 @implementation CPJPopView
 
-- (void)show:(UIView *)view{
+- (void)showInView:(UIView *)view{
     [view addSubview:self];
     [self.animation performAnimation:self];
 }
 
-- (void)hideFromView:(UIView *)view{
+- (void)hide{
     [self.disapperAnimation performAnimation:self];
 }
 
