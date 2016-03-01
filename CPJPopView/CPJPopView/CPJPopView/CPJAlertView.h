@@ -16,11 +16,13 @@
 @property (nonatomic) UILabel             *titleLabel;
 @property (nonatomic) UIButton            *confirmButton;
 @property (nonatomic) CPJPopViewAnimation *contentViewAnimation;
+@property (nonatomic) CGFloat             contentViewHeight;
 
 /**
  * @brief 在该方法中配置界面，子类根据需要重写该方法。
+ * @param text代表提示框显示的文字内容
  */
-- (void)configSubviews;
+- (void)configSubviewsWithText:(NSString *)text;
 
 - (void)showInView:(UIView *) view withTitle:(NSString *)title withText:(NSString *)text withConfirm:(void (^)())confirm;
 

@@ -16,6 +16,7 @@
 		D9298F181C83E32C003F3ED9 /* CPJPopViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9298F171C83E32C003F3ED9 /* CPJPopViewTests.m */; };
 		D9298F231C83E32C003F3ED9 /* CPJPopViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9298F221C83E32C003F3ED9 /* CPJPopViewUITests.m */; };
 		D9298F341C84114D003F3ED9 /* CPJPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9298F331C84114D003F3ED9 /* CPJPopView.m */; };
+		D937CCF61C858BA800DCA084 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = D937CCF51C858BA800DCA084 /* UIViewExt.m */; };
 		D9FDBCCC1C841D5E009EDE5C /* CPJAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FDBCCB1C841D5E009EDE5C /* CPJAlertView.m */; };
 		D9FDBCCF1C8436FF009EDE5C /* CPJDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FDBCCE1C8436FF009EDE5C /* CPJDialogView.m */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,8 @@
 		D9298F311C83F3B9003F3ED9 /* CPJPopViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPJPopViewProtocol.h; sourceTree = "<group>"; };
 		D9298F321C84114D003F3ED9 /* CPJPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPJPopView.h; sourceTree = "<group>"; };
 		D9298F331C84114D003F3ED9 /* CPJPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPJPopView.m; sourceTree = "<group>"; };
+		D937CCF41C858BA800DCA084 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		D937CCF51C858BA800DCA084 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		D9FDBCCA1C841D5E009EDE5C /* CPJAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPJAlertView.h; sourceTree = "<group>"; };
 		D9FDBCCB1C841D5E009EDE5C /* CPJAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPJAlertView.m; sourceTree = "<group>"; };
 		D9FDBCCD1C8436FF009EDE5C /* CPJDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPJDialogView.h; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				D9FDBCCB1C841D5E009EDE5C /* CPJAlertView.m */,
 				D9FDBCCD1C8436FF009EDE5C /* CPJDialogView.h */,
 				D9FDBCCE1C8436FF009EDE5C /* CPJDialogView.m */,
+				D937CCF41C858BA800DCA084 /* UIViewExt.h */,
+				D937CCF51C858BA800DCA084 /* UIViewExt.m */,
 			);
 			path = CPJPopView;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D937CCF61C858BA800DCA084 /* UIViewExt.m in Sources */,
 				D9FDBCCF1C8436FF009EDE5C /* CPJDialogView.m in Sources */,
 				D9298F051C83E32C003F3ED9 /* ViewController.m in Sources */,
 				D9298F021C83E32C003F3ED9 /* AppDelegate.m in Sources */,

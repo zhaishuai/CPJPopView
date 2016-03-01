@@ -31,12 +31,8 @@ typedef void (^CancelBlock)();
     return _cancelButton;
 }
 
-- (void)configSubviews{
-    self.frame = [UIScreen mainScreen].bounds;
-    self.contentView.layer.masksToBounds = YES;
-    self.contentView.layer.cornerRadius = 10;
-    self.contentView.frame = CGRectMake(0, 0, 2*self.frame.size.width/3, self.frame.size.height/5);
-    self.contentView.center = CGPointMake(self.center.x, self.center.y - self.frame.size.height/10);
+- (void)configSubviewsWithText:(NSString *)text;{
+    [super configSubviewsWithText:text];
     self.confirmButton.frame = CGRectMake(self.contentView.frame.size.width/2 - CONFIRM_BUTTON_WIDTH -5, self.contentView.frame.size.height - CONFIRM_BUTTON_HEIGHT - 10, CONFIRM_BUTTON_WIDTH, CONFIRM_BUTTON_HEIGHT);
     self.cancelButton.frame = CGRectMake(self.contentView.frame.size.width/2 + 5, self.contentView.frame.size.height - CONFIRM_BUTTON_HEIGHT - 10, CONFIRM_BUTTON_WIDTH, CONFIRM_BUTTON_HEIGHT);
     

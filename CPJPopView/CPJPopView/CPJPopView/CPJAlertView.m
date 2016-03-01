@@ -11,10 +11,10 @@
 #define CONFIRM_BUTTON_HEIGHT 30
 #define CONFIRM_BUTTON_WIDTH  100
 #define TITLE_LABEL_HEIGHT    30
-#define TITLE_LABEL_WIDTH     self.contentView.frame.size.width - 40
-#define CONTENTVIEW_WIDTH     2*self.frame.size.width/3
-#define CONTENTVIEW_HEIGHT    150
-
+#define TITLE_LABEL_WIDTH     CONTENTVIEW_WIDTH - 40
+#define CONTENTVIEW_WIDTH     280
+#define CONTENTVIEW_HEIGHT    self.contentViewHeight
+#define FONT_SIZE             15
 
 typedef void (^ConfirmBlock)();
 
@@ -59,7 +59,7 @@ typedef void (^ConfirmBlock)();
         _textLabel.numberOfLines = 0;
         _textLabel.textAlignment = NSTextAlignmentCenter;
         _textLabel.textColor = [UIColor grayColor];
-        _textLabel.font = [UIFont systemFontOfSize:15];
+        _textLabel.font = [UIFont systemFontOfSize:FONT_SIZE];
         [_contentView addSubview:_textLabel];
     }
     return _textLabel;
@@ -76,12 +76,13 @@ typedef void (^ConfirmBlock)();
     return _titleLabel;
 }
 
-- (void)configSubviews{
+- (void)configSubviewsWithText:(NSString *)text{
     self.frame = [UIScreen mainScreen].bounds;
+    
+    CGFloat height = [self heightForText:text font:[UIFont systemFontOfSize:FONT_SIZE] withinWidth:TITLE_LABEL_WIDTH];
+    self.contentViewHeight = 120 + height;
     self.contentView.layer.masksToBounds = YES;
     self.contentView.layer.cornerRadius = 10;
-    self.contentView.frame = CGRectMake(0, 0, CONTENTVIEW_WIDTH, CONTENTVIEW_HEIGHT);
-    self.contentView.center = CGPointMake(self.center.x, self.center.y - self.frame.size.height/10);
     self.confirmButton.frame = CGRectMake(self.contentView.frame.size.width/2 - CONFIRM_BUTTON_WIDTH/2, self.contentView.frame.size.height - CONFIRM_BUTTON_HEIGHT - 10, CONFIRM_BUTTON_WIDTH, CONFIRM_BUTTON_HEIGHT);
     [self.confirmButton setTitle:@"确定" forState:UIControlStateNormal];
     [self.confirmButton setTintColor:[UIColor whiteColor]];
@@ -90,16 +91,11 @@ typedef void (^ConfirmBlock)();
     [self.confirmButton setBackgroundColor:[UIColor colorWithRed:251.0/255.0 green:90.0/255.0 blue:146.0/255.0 alpha:1]];
 }
 
-- (void)showInView:(UIView *)view{
-    [super showInView:view];
-    [self addSubview:self.contentView];
-    [self configSubviews];
-    [self.contentViewAnimation performAnimation:self.contentView];
-}
-
 - (void)showInView:(UIView *)view withTitle:(NSString *)title withText:(NSString *)text withConfirm:(void (^)())confirm{
-    
     [self showInView:view];
+    [self configSubviewsWithText:text];
+    [self addSubview:self.contentView];
+    [self.contentViewAnimation performAnimation:self.contentView];
     self.block = confirm;
     self.textLabel.text = text;
     self.titleLabel.text = title;
@@ -112,6 +108,15 @@ typedef void (^ConfirmBlock)();
     [self hide];
     if(self.block != nil)
         self.block();
+}
+
+- (CGFloat)heightForText:(NSString*)text font:(UIFont*)font withinWidth:(CGFloat)width {
+    CGRect rect = [text boundingRectWithSize:CGSizeMake(width, FLT_MAX)
+                                  options:NSStringDrawingUsesLineFragmentOrigin
+                               attributes:@{NSFontAttributeName:font}
+                                  context:nil];
+    
+    return rect.size.height;
 }
 
 @end
