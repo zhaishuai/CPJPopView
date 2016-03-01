@@ -54,8 +54,8 @@ typedef void (^CancelBlock)();
     self.cancelButton.layer.borderWidth = 1.0;
 }
 
-- (void)showInView:(UIView *)view withText:(NSString *)text withConfirm:(void (^)())confirm withCancel:(void (^)())cancel{
-    [self showInView:view withText:text withConfirm:confirm];
+- (void)showInView:(UIView *)view withTitle:(NSString *)title withText:(NSString *)text withConfirm:(void (^)())confirm withCancel:(void (^)())cancel{
+    [self showInView:view withTitle:title withText:text withConfirm:confirm];
     self.cancelBlock = cancel;
 }
 

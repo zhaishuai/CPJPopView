@@ -12,6 +12,6 @@
 
 @property (nonatomic) UIButton *cancelButton;
 
-- (void)showInView:(UIView *) view withText:(NSString *)text withConfirm:(void (^)())confirm withCancel:(void (^)())cancel;
+- (void)showInView:(UIView *)view withTitle:(NSString *)title withText:(NSString *)text withConfirm:(void (^)())confirm withCancel:(void (^)())cancel;
 
 @end

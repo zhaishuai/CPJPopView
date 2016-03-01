@@ -41,14 +41,14 @@
 
 - (IBAction)showAlertView:(id)sender {
     CPJAlertView *alertView = [CPJAlertView new];
-    [alertView showInView:self.view withText:@"CPJAlertView使用起来非常简单, 不需要在使用delegate" withConfirm:^{
+    [alertView showInView:self.view withTitle:@"提示" withText:@"CPJAlertView使用起来非常简单, 不需要在使用delegate" withConfirm:^{
         NSLog(@"hello world");
     }];
 }
 
 - (IBAction)showDialogView:(id)sender {
     CPJDialogView *dialogView = [CPJDialogView new];
-    [dialogView showInView:self.view withText:@"CPJAlertView使用起来非常简单, 不需要在使用delegate" withConfirm:^{
+    [dialogView showInView:self.view withTitle:@"警告" withText:@"CPJAlertView使用起来非常简单, 不需要在使用delegate" withConfirm:^{
         
         NSLog(@"confirm!");
     } withCancel:^{
